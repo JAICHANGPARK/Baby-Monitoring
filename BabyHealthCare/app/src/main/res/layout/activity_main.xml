@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".HomeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_awesome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:background="?attr/colorPrimary"
+        android:minHeight="@dimen/abc_action_bar_default_height_material" />
+
+    <LinearLayout
+        android:id="@+id/button_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_awesome_toolbar"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/button_ambulance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ambulance"
+            android:text="긴급전화"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/button_internet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/internet"
+            android:text="페이지"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/util_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_ll">
+
+        <Button
+            android:id="@+id/buttonSerialSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/serialSendText"
+            android:layout_alignRight="@+id/serialSendText"
+            android:text="데이터 전송" />
+
+        <TextView
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/serialSendText"
+            android:layout_below="@+id/serialSendText"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:text="Received Data:"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/serialSendText"
+            android:layout_width="310dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/buttonScan"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:background="#555555"
+            android:bufferType="editable"
+            android:ems="10"
+            android:hint="Data sending Area"
+            android:inputType="text"
+            android:textColor="#fefefe"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/serialSendText"
+            android:layout_alignParentTop="true"
+            android:text="장비 검색" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/util_rl"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/serialReveicedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="10sp" />
+    </ScrollView>
+
+
+</RelativeLayout>
